@@ -15,12 +15,12 @@
 package main
 
 import (
+	"github.com/jarpy/pulumi-buildkite/provider/pkg/version"
+	buildkite "github.com/jarpy/pulumi-buildkite/provider"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfgen"
-	xyz "github.com/pulumi/pulumi-xyz/provider"
-	"github.com/pulumi/pulumi-xyz/provider/pkg/version"
 )
 
 func main() {
 	// Modify the path to point to the new provider
-	tfgen.Main("xyz", version.Version, xyz.Provider())
+	tfgen.Main("buildkite", version.Version, buildkite.Provider())
 }
